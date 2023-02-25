@@ -13,6 +13,7 @@ module.exports = {
   collectCoverageFrom: [
     'src/**/*.ts',
     '!**/__mocks__/**/*.ts',
+    '!src/index.ts',
   ],
   automock: false,
   setupFiles: [
