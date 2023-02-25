@@ -1,0 +1,10 @@
+node_modules
+.eslintignore
+.eslintrc.json
+jest.config.js
+setupJest.ts
+tsconfig.json
+coverage
+.idea
+.github
+src

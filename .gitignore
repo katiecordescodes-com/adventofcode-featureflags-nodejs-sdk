@@ -4,5 +4,11 @@ node_modules
 # Test coverage
 coverage
 
+# Build artifacts
+dist
+
 # IDE files
 .idea
+
+# Github action testing
+my.secrets
