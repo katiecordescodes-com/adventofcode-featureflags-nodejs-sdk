@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build artifacts
-        run: npm run clean
+        run: npm run build
 
       - name: Publish package
         run: npm publish --access=public
