@@ -1,6 +1,6 @@
 {
   "name": "@katiecordescodes-com/adventofcode-featureflags-nodejs-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SDK package to help interact with the adventofcode-featureflags microservice",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
