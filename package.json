@@ -4,6 +4,9 @@
   "description": "SDK package to help interact with the adventofcode-featureflags microservice",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": "git@github.com:katiecordescodes-com/adventofcode-featureflags-nodejs-sdk.git",
   "author": "Katharine Cordes <gillis.katharine@gmail.com>",
   "license": "MIT",
