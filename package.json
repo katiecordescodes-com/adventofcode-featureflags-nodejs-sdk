@@ -1,6 +1,6 @@
 {
   "name": "@katiecordescodes-com/adventofcode-featureflags-nodejs-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "SDK package to help interact with the adventofcode-featureflags microservice",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -32,7 +32,6 @@
   "scripts": {
     "test:ci": "jest --coverage",
     "test": "jest",
-    "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "build": "tsc -p tsconfig.build.json"
   }
 }

@@ -14,7 +14,7 @@ describe('FeatureFlagService', () => {
         error: null,
       }));
 
-      const featureFlagService = new FeatureFlagService();
+      const featureFlagService = new FeatureFlagService('http://featureflags');
 
       const enabled = featureFlagService.isFeatureFlagEnabled('test_enabled');
       expect(enabled).toBeTruthy();
@@ -28,7 +28,7 @@ describe('FeatureFlagService', () => {
         error: null,
       }));
 
-      const featureFlagService = new FeatureFlagService();
+      const featureFlagService = new FeatureFlagService('http://featureflags');
 
       const enabled = await featureFlagService.isFeatureFlagEnabled('test_disabled');
       expect(enabled).toBeFalsy();
@@ -44,7 +44,7 @@ describe('FeatureFlagService', () => {
         },
       }), { status: 404 });
 
-      const featureFlagService = new FeatureFlagService();
+      const featureFlagService = new FeatureFlagService('http://featureflags');
 
       const enabled = await featureFlagService.isFeatureFlagEnabled('test_not_found');
       expect(enabled).toBeNull();
@@ -60,23 +60,9 @@ describe('FeatureFlagService', () => {
         },
       }), { status: 500 });
 
-      const featureFlagService = new FeatureFlagService();
+      const featureFlagService = new FeatureFlagService('http://featureflags');
 
       await expect(featureFlagService.isFeatureFlagEnabled('test_not_found')).rejects.toThrow(new Error('Error getting feature flag enabled status: {"message":"Unknown error"}'));
-    });
-
-    it('should use the custom protocol and domain for the call', async () => {
-      mockFetch.mockResponseOnce(JSON.stringify({
-        data: true,
-        error: null,
-      }));
-
-      const featureFlagService = new FeatureFlagService('customdomain', true);
-
-      await featureFlagService.isFeatureFlagEnabled('test_enabled');
-
-      expect(mockFetch).toHaveBeenCalledTimes(1);
-      expect(mockFetch).toHaveBeenCalledWith('https://customdomain/v1/featureflags/test_enabled/enabled');
     });
   });
 });
